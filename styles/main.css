@@ -148,7 +148,7 @@ main {
     background-color: #ffd54f;
 }
 
-#quem-somos, #services, #clients, #faq {
+#quem-somos, #services, #clients, #faq, #contact {
     padding: 4rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -266,26 +266,42 @@ h2 {
     margin: 0 auto;
 }
 
-.faq-item {
+details {
     background-color: var(--secondary-color);
     border-radius: 8px;
     margin-bottom: 1rem;
     padding: 1rem;
-    cursor: pointer;
-    transition: box-shadow 0.3s ease;
-}
-
-.faq-item:hover {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.faq-answer {
-    display: none;
-    padding-top: 1rem;
+summary {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    position: relative;
+    list-style: none;
 }
 
-.faq-item.active .faq-answer {
-    display: block;
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::after {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+details p {
+    margin-top: 1rem;
 }
 
 #contact {

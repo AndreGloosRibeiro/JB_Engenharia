@@ -336,6 +336,47 @@ details p {
     position: relative;
 }
 
+.contact-item{
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+#contact {
+    background-color: #f8f9fa;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+#contact::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: var(--primary-color);
+    transform: skewY(-2deg);
+}
+
+#contact h2 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    position: relative;
+}
+
 .contact-item {
     background-color: white;
     padding: 2rem;
@@ -343,6 +384,9 @@ details p {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease;
+    flex: 1;
+    max-width: 250px; /* Defina um tamanho máximo */
+    width: 100%; /* Garante que os itens preencham o espaço disponível */
 }
 
 .contact-item:hover {
@@ -364,6 +408,7 @@ details p {
     color: var(--text-color);
     text-decoration: none;
     font-weight: bold;
+    word-break: break-word; /* Permite que palavras longas quebrem */
 }
 
 footer {
@@ -471,6 +516,10 @@ footer {
     .contact-container {
         flex-direction: column;
         align-items: center;
+    }
+
+    .contact-item {
+        max-width: 100%; /* Em telas menores, permite que o item ocupe toda a largura */
     }
 
     .footer-content {

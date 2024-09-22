@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
         slideIndex++;
         if (slideIndex > slides.length) {slideIndex = 1}    
         slides[slideIndex-1].style.display = "block";  
-        setTimeout(showSlides, 4000); // Mudar de imagem a cada 4 segundos
+        setTimeout(showSlides, 2000); // Mudar de imagem a cada 4 segundos
     }
 
     // Para os botões de navegação (opcional)

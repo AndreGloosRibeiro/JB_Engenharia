@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     menuToggle.addEventListener('click', function() {
         navLinks.classList.toggle('active');
-        
+       
         // Adiciona um pequeno atraso para cada item do menu
         const navItems = navLinks.querySelectorAll('li');
         navItems.forEach((item, index) => {
@@ -57,11 +57,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Animation on scroll
     function animateOnScroll() {
         const elements = document.querySelectorAll('.service-card, .faq-item, #cta');
-        
+       
         elements.forEach(element => {
             const elementTop = element.getBoundingClientRect().top;
             const elementVisible = 150;
-            
+           
             if (elementTop < window.innerHeight - elementVisible) {
                 element.classList.add('animate');
             }
@@ -110,22 +110,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Client logo slider animation
     const clientSlider = document.querySelector('.client-slider');
-    let sliderPosition = 0;
-    const sliderSpeed = 1; // pixels per frame
+    const clientLogos = clientSlider.children;
+    const logoWidth = clientLogos[0].offsetWidth;
+    let currentPosition = 0;
 
-    function animateClientSlider() {
-        sliderPosition -= sliderSpeed;
-        
-        if (sliderPosition <= -200) { // Adjust based on logo width + margin
-            sliderPosition = 0;
+    function moveLogos() {
+        currentPosition -= 1; // Ajuste a velocidade mudando este valor
+       
+        if (currentPosition <= -logoWidth) {
+            currentPosition = 0;
             clientSlider.appendChild(clientSlider.firstElementChild);
         }
-        
-        clientSlider.style.transform = `translateX(${sliderPosition}px)`;
-        requestAnimationFrame(animateClientSlider);
+       
+        clientSlider.style.transform = `translateX(${currentPosition}px)`;
+        requestAnimationFrame(moveLogos);
     }
 
-    animateClientSlider();
+    moveLogos();
 
     // Close menu when clicking outside
     document.addEventListener('click', function(event) {
@@ -149,11 +150,6 @@ document.addEventListener('DOMContentLoaded', function() {
         slideIndex++;
         if (slideIndex > slides.length) {slideIndex = 1}    
         slides[slideIndex-1].style.display = "block";  
-        setTimeout(showSlides, 2000); // Mudar de imagem a cada 4 segundos
+        setTimeout(showSlides, 4000); // Mudar de imagem a cada 4 segundos
     }
-
-    // Para os botões de navegação (opcional)
-    window.plusSlides = function(n) {
-        showSlides(slideIndex += n);
-    };
 });

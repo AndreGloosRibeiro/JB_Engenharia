@@ -110,14 +110,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Client logo slider animation
     const clientSlider = document.querySelector('.client-slider');
-    const clientLogos = clientSlider.children;
+    const clientLogos = Array.from(clientSlider.children);
     const logoWidth = clientLogos[0].offsetWidth;
+    const gap = 20; // Espaço entre os logos
     let currentPosition = 0;
+
+    // Duplicar os logos para criar o efeito contínuo
+    clientLogos.forEach(logo => {
+        const clone = logo.cloneNode(true);
+        clientSlider.appendChild(clone);
+    });
 
     function moveLogos() {
         currentPosition -= 1; // Ajuste a velocidade mudando este valor
        
-        if (currentPosition <= -logoWidth) {
+        if (currentPosition <= -(logoWidth + gap)) {
             currentPosition = 0;
             clientSlider.appendChild(clientSlider.firstElementChild);
         }

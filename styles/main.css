@@ -240,14 +240,34 @@ h2 {
 
 .client-slider {
     display: flex;
-    overflow-x: hidden;
-    padding: 2rem 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.client-slider::before,
+.client-slider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+}
+
+.client-slider::before {
+    left: 0;
+    background: linear-gradient(to right, var(--background-color) 0%, transparent 100%);
+}
+
+.client-slider::after {
+    right: 0;
+    background: linear-gradient(to left, var(--background-color) 0%, transparent 100%);
 }
 
 .client-logo {
     flex: 0 0 auto;
     width: 200px;
-    margin-right: 2rem;
+    margin-right: 20px; /* Este é o 'gap' entre os logos */
     opacity: 0.7;
     transition: opacity 0.3s ease;
 }
@@ -260,6 +280,7 @@ h2 {
     width: 100%;
     height: auto;
 }
+
 
 .faq-container {
     max-width: 800px;

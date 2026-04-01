@@ -1,0 +1,12 @@
+# JB Engenharia — requisitos de AMBIENTE (não é Python)
+#
+# Em projetos Next.js/Node as dependências do código ficam no package.json.
+# Este arquivo lista só o que precisa estar instalado na máquina antes do npm install.
+#
+# Obrigatório:
+#   Node.js  >= 18.18   (recomendado: 20.x LTS)  https://nodejs.org
+#   npm      >= 9       (vem junto com o Node)
+#
+# Depois de instalar o Node, na pasta web:
+#   npm install
+#   npm run dev

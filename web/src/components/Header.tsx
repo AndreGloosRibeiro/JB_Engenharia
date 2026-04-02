@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { assetUrl } from "@/lib/asset";
 
 const nav = [
   { href: "#inicio", label: "Início" },
@@ -48,7 +49,7 @@ export function Header() {
         >
           <span className="relative h-10 w-36 md:h-11 md:w-40">
             <Image
-              src="/imagens/logo.png"
+              src={assetUrl("/imagens/logo.png")}
               alt="JB Engenharia Industrial"
               fill
               className="object-contain object-left"

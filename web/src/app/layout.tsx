@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Outfit } from "next/font/google";
 import "./globals.css";
+import { assetUrl } from "@/lib/asset";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -16,7 +17,7 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   icons: {
-    icon: "/imagens/logo.png",
+    icon: assetUrl("/imagens/logo.png"),
   },
   title: "JB Engenharia Industrial | NR-13 e planejamento junto ao MTE",
   description:

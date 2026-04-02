@@ -1,21 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
+import { assetUrl } from "@/lib/asset";
 
 const social = [
   {
     href: "https://www.facebook.com/people/JB-Engenharia-Industrial/100057637501497/",
     label: "Facebook",
-    icon: "/imagens/facebook.png",
+    icon: assetUrl("/imagens/facebook.png"),
   },
   {
     href: "https://www.instagram.com/jb_engenharia_industrial?igsh=MWFiMzNpbzV6NXN6cg==",
     label: "Instagram",
-    icon: "/imagens/instagram.png",
+    icon: assetUrl("/imagens/instagram.png"),
   },
   {
     href: "tel:+5519987120774",
     label: "Telefone",
-    icon: "/imagens/telefone.png",
+    icon: assetUrl("/imagens/telefone.png"),
   },
 ];
 
@@ -25,7 +26,7 @@ export function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 px-4 md:flex-row md:items-start md:justify-between">
         <div className="relative h-24 w-56 shrink-0">
           <Image
-            src="/imagens/Logo_inteiro.png"
+            src={assetUrl("/imagens/Logo_inteiro.png")}
             alt="JB Engenharia Industrial"
             fill
             className="object-contain object-left-top"

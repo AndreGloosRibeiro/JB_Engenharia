@@ -3,11 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { assetUrl } from "@/lib/asset";
 
 const slides = [
-  { src: "/imagens/caldeira.jpg", alt: "Inspeção em caldeira industrial" },
-  { src: "/imagens/empresa.jpg", alt: "JB Engenharia Industrial" },
-  { src: "/imagens/tubulação.jpg", alt: "Tubulação industrial" },
+  { src: assetUrl("/imagens/caldeira.jpg"), alt: "Inspeção em caldeira industrial" },
+  { src: assetUrl("/imagens/empresa.jpg"), alt: "JB Engenharia Industrial" },
+  { src: assetUrl("/imagens/tubulação.jpg"), alt: "Tubulação industrial" },
 ];
 
 export function Hero() {

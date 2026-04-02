@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { assetUrl } from "@/lib/asset";
 
 export function About() {
   return (
@@ -6,7 +7,7 @@ export function About() {
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 md:grid-cols-2 md:gap-14">
         <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
           <Image
-            src="/imagens/empresa.jpg"
+            src={assetUrl("/imagens/empresa.jpg")}
             alt="Equipe e estrutura JB Engenharia Industrial"
             fill
             className="object-cover"

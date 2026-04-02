@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { assetUrl } from "@/lib/asset";
 
 const waUrl =
   "https://api.whatsapp.com/send/?phone=5519987120774&text=Ol%C3%A1%2C%20gostaria%20de%20falar%20sobre%20NR-13%20e%20planejamento%20MTE.&type=phone_number&app_absent=0";
@@ -38,7 +39,7 @@ export function Contact() {
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3.5 text-base font-semibold text-white transition hover:bg-white/10"
               >
                 <span className="relative h-5 w-5">
-                  <Image src="/imagens/email.png" alt="" fill className="object-contain" />
+                  <Image src={assetUrl("/imagens/email.png")} alt="" fill className="object-contain" />
                 </span>
                 jbengenharia9@gmail.com
               </a>

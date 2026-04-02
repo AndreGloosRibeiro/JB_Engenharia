@@ -1,11 +1,12 @@
 import Image from "next/image";
+import { assetUrl } from "@/lib/asset";
 
 const clients = [
-  { src: "/imagens/Imagem 7.jpg", alt: "Cliente parceiro" },
-  { src: "/imagens/Imagem10.png", alt: "Nippokar" },
-  { src: "/imagens/UNITEC.png", alt: "UNITEC" },
-  { src: "/imagens/Imagem 2.png", alt: "Bambala" },
-  { src: "/imagens/Imagem1.png", alt: "Borgstena" },
+  { src: assetUrl("/imagens/Imagem 7.jpg"), alt: "Cliente parceiro" },
+  { src: assetUrl("/imagens/Imagem10.png"), alt: "Nippokar" },
+  { src: assetUrl("/imagens/UNITEC.png"), alt: "UNITEC" },
+  { src: assetUrl("/imagens/Imagem 2.png"), alt: "Bambala" },
+  { src: assetUrl("/imagens/Imagem1.png"), alt: "Borgstena" },
 ];
 
 export function Clients() {
